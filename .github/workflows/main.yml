@@ -15,8 +15,8 @@ jobs:
           fetch-depth: 0
           lfs: true
       - name: Push to hub
-           env:
-              HF_TOKEN: ${{ secrets.HF_TOKEN }}
-                run: |
-                    git pull https://RajeshKarra:$HF_TOKEN@huggingface.co/spaces/RajeshKarra/PINN-1d-heat-equation main
-                    git push https://RajeshKarra:$HF_TOKEN@huggingface.co/spaces/RajeshKarra/PINN-1d-heat-equation main
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          git pull https://RajeshKarra:$HF_TOKEN@huggingface.co/spaces/RajeshKarra/PINN-1d-heat-equation main
+          git push https://RajeshKarra:$HF_TOKEN@huggingface.co/spaces/RajeshKarra/PINN-1d-heat-equation main
