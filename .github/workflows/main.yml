@@ -10,13 +10,18 @@ jobs:
   sync-to-hub:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
           lfs: true
       - name: Push to hub
+      - name: Set up Git user
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
           git pull --rebase https://RajeshKarra:$HF_TOKEN@huggingface.co/spaces/RajeshKarra/PINN-1d-heat-equation main
           git push https://RajeshKarra:$HF_TOKEN@huggingface.co/spaces/RajeshKarra/PINN-1d-heat-equation main
+          git config --global user.name "RajeshKarra"
+          git config --global user.email "rajeshkumarkarra@outlook.com"
+
