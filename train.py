@@ -1,8 +1,10 @@
 import torch
 import torch.nn as nn
+import numpy as np   # ✅ Add this line
+import matplotlib.pyplot as plt
 from model import PINN
 from utils import generate_collocation_points, generate_boundary_points, generate_initial_points
-import matplotlib.pyplot as plt
+
 
 def initial_condition(x):
     return torch.sin(np.pi * x)
@@ -41,7 +43,7 @@ def train():
         loss_bc = torch.mean((u_b) ** 2)
 
         loss = loss_pde + loss_ic + loss_bc
-        loss.backward()
+        loss.backward(retain_graph=True)
         optimizer.step()
 
         if epoch % 500 == 0:
