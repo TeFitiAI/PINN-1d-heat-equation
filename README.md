@@ -1,11 +1,11 @@
-# PINN-1d-heat-equation
+
 ---
-title: {{title}}
-emoji: {{emoji}}
-colorFrom: {{colorFrom}}
-colorTo: {{colorTo}}
-sdk: {{sdk}}
-sdk_version: "{{sdkVersion}}"
-app_file: app.py
+title: PINN-1d-heat-equation
+emoji: ✨  
+colorFrom: blue
+colorTo: purple
+sdk: gradio
+sdk_version: "4.16.0" 
+app_file: gradio_app.py
 pinned: false
 ---
